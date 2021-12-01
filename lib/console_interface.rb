@@ -28,15 +28,7 @@ class ConsoleInterface
   end
 
   def word_to_show
-    result =
-      @game.letters_to_guess.map do |letter|
-        letter = '__' if letter.nil?
-
-        letter
-
-      end
-
-    result.join(' ')
+    @game.letters_to_guess.map { |letter| letter || '__' }.join(' ')
   end
 
   def errors_to_show
